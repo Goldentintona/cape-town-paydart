@@ -13,7 +13,7 @@ provider "kubernetes" {
 }
 
 provider "helm" {
-  kubernetes {
+  kubernetes = {
     host                   = data.aws_eks_cluster.default.endpoint
     cluster_ca_certificate = base64decode(data.aws_eks_cluster.default.certificate_authority[0].data)
     token                  = data.aws_eks_cluster_auth.default.token
@@ -26,6 +26,8 @@ resource "helm_release" "default" {
   chart       = var.chart
   description = var.description
   version     = var.chart_version
+  set           = local.set_values
+  set_sensitive = local.set_sensitive_values
 
   repository = var.repository
   namespace  = var.kubernetes_namespace
@@ -36,24 +38,40 @@ resource "helm_release" "default" {
   timeout      = var.timeout
   values       = var.values
   wait         = var.wait
+}
 
+#   dynamic "set" {
+#     for_each = var.set
+#     content {
+#       name  = set.value["name"]
+#       value = set.value["value"]
+#       type  = set.value["type"]
+#     }
+#   }
 
-  dynamic "set" {
-    for_each = var.set
-    content {
-      name  = set.value["name"]
-      value = set.value["value"]
-      type  = set.value["type"]
+#   dynamic "set_sensitive" {
+#     for_each = var.set_sensitive
+#     content {
+#       name  = set_sensitive.value["name"]
+#       value = set_sensitive.value["value"]
+#       type  = set_sensitive.value["type"]
+#     }
+#   }
+
+# }
+
+locals {
+  set_values = [
+    for s in var.set : {
+      name  = s.name
+      value = tostring(s.value)
     }
-  }
+  ]
 
-  dynamic "set_sensitive" {
-    for_each = var.set_sensitive
-    content {
-      name  = set_sensitive.value["name"]
-      value = set_sensitive.value["value"]
-      type  = set_sensitive.value["type"]
+  set_sensitive_values = [
+    for s in var.set_sensitive : {
+      name  = s.name
+      value = tostring(s.value)
     }
-  }
-
+  ]
 }

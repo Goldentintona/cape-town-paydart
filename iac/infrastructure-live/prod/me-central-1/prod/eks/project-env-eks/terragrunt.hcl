@@ -40,7 +40,7 @@ dependency "vpc" {
 
 
 inputs = {
-  name                              = include.root.locals.resource_name
+  name                              = "${include.root.locals.resource_name}-afs1"
   region                            = "${include.root.locals.aws_region}"
   vpc_id                            = dependency.vpc.outputs.vpc_id
   subnet_ids                        = dependency.vpc.outputs.public_subnets

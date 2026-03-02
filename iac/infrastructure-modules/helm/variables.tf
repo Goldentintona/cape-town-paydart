@@ -67,22 +67,38 @@ variable "wait" {
   description = "Will wait until all resources are in a ready state before marking the release as successful. It will wait for as long as `timeout`. Defaults to `true`."
   default     = null
 }
+# variable "set" {
+#   type = list(object({
+#     name  = string
+#     value = string
+#     type  = string
+#   }))
+#   description = "Value block with custom values to be merged with the values yaml."
+#   default     = []
+# }
+
+# variable "set_sensitive" {
+#   type = list(object({
+#     name  = string
+#     value = string
+#     type  = string
+#   }))
+#   description = "Value block with custom sensitive values to be merged with the values yaml that won't be exposed in the plan's diff."
+#   default     = []
+# }
+
 variable "set" {
   type = list(object({
     name  = string
-    value = string
-    type  = string
+    value = any
   }))
-  description = "Value block with custom values to be merged with the values yaml."
-  default     = []
+  default = []
 }
 
 variable "set_sensitive" {
   type = list(object({
     name  = string
-    value = string
-    type  = string
+    value = any
   }))
-  description = "Value block with custom sensitive values to be merged with the values yaml that won't be exposed in the plan's diff."
-  default     = []
+  default = []
 }

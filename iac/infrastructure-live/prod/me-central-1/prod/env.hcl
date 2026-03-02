@@ -3,9 +3,9 @@
 locals {
   environment                = "prod"
   team                       = "devops"
-  project                    = "gti-paydart"
-  domain_name                = "gtiswitch.com"
-  cidr                       = "10.9.0.0/16"
+  project                    = "gti-paydart-af1"
+  domain_name                = "gtipayglobal.com"
+  cidr                       = "11.9.0.0/16"
   bastion_host_instance_type = "t3.nano"
 
 }

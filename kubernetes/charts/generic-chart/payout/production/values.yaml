@@ -259,7 +259,7 @@ ingress:
   #The load balancer name and group name should be the same across all application Helm files
   loadbalancername: global
   groupname: generic
-  awssubnets: "subnet-0b5fae1d1000d85a6, subnet-0699559ab844d369a, subnet-0df408f1626182f9b"
+  awssubnets: "subnet-036e9e6027b7c5ef1, subnet-09c250dcbdfaf760a, subnet-0e56b04ed9043c4fc"
   wafarn: ""
 
   ingressClassName: alb

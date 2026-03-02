@@ -62,7 +62,7 @@ dependency "eks_cluster" {
 
 inputs = {
   name                          = include.root.locals.resource_name
-  subnet_ids                    = ["subnet-08bf296eaa6318eb2"]
+  subnet_ids                    = dependency.vpc.outputs.private_subnets
   cluster_name                  = dependency.eks_cluster.outputs.eks_cluster_id
   instance_types                = ["t3.medium", "c5.large", "c5d.large"]
   desired_size                  = 1

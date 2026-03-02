@@ -37,6 +37,6 @@ inputs = {
   registry_server = "https://index.docker.io/v1/"
   docker_username = get_env("DOCKER_USER")
   docker_password = get_env("DOCKER_TOKEN")
-  docker_email    = "service_provider@paydart.co"
+  docker_email    = "placid.timti@goldentintona.com"
   namespaces      = ["backend", "frontend"]
 }

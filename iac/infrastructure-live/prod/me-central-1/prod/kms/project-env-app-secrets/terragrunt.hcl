@@ -5,7 +5,7 @@ include "root" {
 }
 
 terraform {
-  source = "git@github.com:cloudposse/terraform-aws-kms-key.git//.?ref=0.12.1"
+  source = "git::https://github.com/cloudposse/terraform-aws-kms-key.git?ref=0.12.1"
   extra_arguments "init_args" {
     commands = [
       "init"

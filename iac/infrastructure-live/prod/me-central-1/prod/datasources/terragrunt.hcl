@@ -9,5 +9,5 @@ terraform {
 }
 
 inputs = {
-  acm_domain = "*.REPLACE-ME.co"
+  acm_domain = "*.gtipayglobal.com"
 }
