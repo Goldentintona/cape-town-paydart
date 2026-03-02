@@ -83,11 +83,11 @@ deployment:
   - name: uptime
     nfs:
       path: /uptime
-      server: fs-02a23feb24b1d3e60.efs.af-south-1.amazonaws.com
+      server: fs-0f4f8f38375f980d5.efs.af-south-1.amazonaws.com
   - name: nfs-root
     nfs:
       path: /
-      server: fs-02a23feb24b1d3e60.efs.af-south-1.amazonaws.com
+      server: fs-0f4f8f38375f980d5.efs.af-south-1.amazonaws.com
   # - name: configmap-volume
   #   configMap:
   #     name: '{{ template "application.name" . }}-configmap-nameSuffix'
