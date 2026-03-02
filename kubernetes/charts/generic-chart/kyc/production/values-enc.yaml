@@ -1,0 +1,23 @@
+secret:
+    enabled: ENC[AES256_GCM,data:V9sTag==,iv:cP44YTJ/MyjWamniajmizQWqrwt/BQ5bcxscLHY7VU4=,tag:i00Sv3HnZZLbXWyByw4Kpw==,type:bool]
+    additionalLabels: null
+    annotations: null
+    files:
+        - nameSuffix: ENC[AES256_GCM,data:jJ6Zeoqc,iv:jblU3wdpHNwTmTgfBoDss3Cr5T+GlymwSXpUkCNlIbA=,tag:DRRC3/YzY4csJQmj8lU7Hg==,type:str]
+          data:
+            env: ENC[AES256_GCM,data:rakL6vK0HuDOJOXdtimQUBOC4rMD7OmgPAs2VUVAVBlKwZSn5t957x8+AHfsYhjtiCk3RfeLnQJNdBHSEgyoCCUyrM8PrJeydiXN1k6YlPo/zSTlFmsMyWxHB0Ag3ncIDlAQzMTL/uRH1+vvDIv34eSgdG9abEfyYgWA0sJZbHShiTKX9Dx4RiCJKwvsPLegEjnMurq6QwB8J9UwJIMWN8X+8ElP2WSWLzPeGibV4pyvbnx6bFfKJ5osASJBmt+4O8oaSttekeAfSLf8TjHQqloxt2zDZaV6W4tYbgrDGdrDPNO9TXi8W/+PEC6Dtv+eME+MdmEgCYDlBJvyUsct3qyCWEVGbvmoDuaERa0J7pYSwlkXoICDk9RpHfj+UllBsqJ/DPOBiRXVhTJTSWaex+UnYqaA+xU3Ck22XYMUe+mTtUcYy3Q+ziIAFWAfBSHqZC5Ig/KBmsOJifBOl1jkcaU51q0D9/W/pN5TOrxmdNAqDi9ZNfG93YpsmMqcVDgHiaAIP3tFwtGfybLwIXbvGO5Q7BAsBsGS1+NuCqckpRl8miU0uAVasFjrVeFqq/s/4maqjt0tk80o1NJCDbW32jL4HPiaEmUXaQCT6fUDmymtQUXdUVX+JbfKWC2rhp7G6hmOGkNcRUWu46ypCarzfj6CBBGlxD6RlWvwiZ9DUFockLdtwiNCPCapcj1sC7zT1W4+,iv:fOlSOxeVEvvO/mBueTYlEwz4piQGnBD6e70ijTb8KlQ=,tag:AB12ieut0Cbv2Je23X672g==,type:str]
+sops:
+    kms:
+        - arn: arn:aws:kms:af-south-1:617217039186:alias/gti-paydart-prod-app-secrets
+          created_at: "2025-02-25T13:46:01Z"
+          enc: AQICAHjq02t1lRPrkFWL3hb3GH+5y6T3WpMLOHeZkgYkrzuQAQGfYAX3hE+UQ44nIAnynEAVAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQM4m8wr7wjkPonwbvxAgEQgDuFhWUE1Gn1wyCJGHn1WTp8OWoSykBI+02v/C2/Truxo0tyEe0kwRtjEo5dQdCxiWY7Th64+qNu4pMiKw==
+          aws_profile: ""
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2025-02-25T13:46:02Z"
+    mac: ENC[AES256_GCM,data:4SAHsUfkamKBddYkotBXOJaXrToeB9DHD0Z+8UZhhup+et9UUSUgviqse6VHRhopgYWGBLfOOPeA7genQHJIfYaJXqXxXwORT/1MgdwPaw9afbD6Rk16JCA+Kuj/4bHtVhOgCqrm9vOEhr6oTl8YHyXel9DdTPfOAF5kzO0pmwU=,iv:RJHTqeUu4k1OzsdwzF/TVVsgtgXxp023+sTTmJ87LQc=,tag:/0Hg7Meo64kBNCtyqP6odg==,type:str]
+    pgp: []
+    unencrypted_suffix: _unencrypted
+    version: 3.9.3

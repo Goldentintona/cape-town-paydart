@@ -1,0 +1,237 @@
+applications:
+  app:
+    namespace: argocd
+    project: default
+    source:
+      repoURL: https://github.com/abpaydart/infra-gti.git
+      targetRevision: main
+      path: kubernetes/charts/generic-chart
+      helm:
+        valueFiles:
+        - app/production/values.yaml
+        - secrets://app/production/values-enc.yaml
+        releaseName: app
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: backend
+    syncPolicy: {}
+    revisionHistoryLimit: 5
+  fraud:
+    namespace: argocd
+    project: default
+    source:
+      repoURL: https://github.com/abpaydart/infra-gti.git
+      targetRevision: main
+      path: kubernetes/charts/generic-chart
+      helm:
+        valueFiles:
+        - fraud/production/values.yaml
+        - secrets://fraud/production/values-enc.yaml
+        releaseName: fraud
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: backend
+    syncPolicy: {}
+    revisionHistoryLimit: 5
+  kycadmin:
+    namespace: argocd
+    project: default
+    source:
+      repoURL: https://github.com/abpaydart/infra-gti.git
+      targetRevision: main
+      path: kubernetes/charts/generic-chart
+      helm:
+        valueFiles:
+        - kycadmin/production/values.yaml
+        - secrets://kycadmin/production/values-enc.yaml
+        releaseName: kycadmin
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: backend
+    syncPolicy: {}
+    revisionHistoryLimit: 5
+  nodeserver:
+    namespace: argocd
+    project: default
+    source:
+      repoURL: https://github.com/abpaydart/infra-gti.git
+      targetRevision: main
+      path: kubernetes/charts/generic-chart
+      helm:
+        valueFiles:
+        - nodeserver/production/values.yaml
+        - secrets://nodeserver/production/values-enc.yaml
+        releaseName: nodeserver
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: backend
+    syncPolicy: {}
+    revisionHistoryLimit: 5
+  payout:
+    namespace: argocd
+    project: default
+    source:
+      repoURL: https://github.com/abpaydart/infra-gti.git
+      targetRevision: main
+      path: kubernetes/charts/generic-chart
+      helm:
+        valueFiles:
+        - payout/production/values.yaml
+        - secrets://payout/production/values-enc.yaml
+        releaseName: payout
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: backend
+    syncPolicy: {}
+    revisionHistoryLimit: 5
+  support:
+    namespace: argocd
+    project: default
+    source:
+      repoURL: https://github.com/abpaydart/infra-gti.git
+      targetRevision: main
+      path: kubernetes/charts/generic-chart
+      helm:
+        valueFiles:
+        - support/production/values.yaml
+        - secrets://support/production/values-enc.yaml
+        releaseName: support
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: backend
+    syncPolicy: {}
+    revisionHistoryLimit: 5
+  uptime:
+    namespace: argocd
+    project: default
+    source:
+      repoURL: https://github.com/abpaydart/infra-gti.git
+      targetRevision: main
+      path: kubernetes/charts/generic-chart
+      helm:
+        valueFiles:
+        - uptime/production/values.yaml
+        releaseName: uptime
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: backend
+    syncPolicy: {}
+    revisionHistoryLimit: 5
+  checkout:
+    namespace: argocd
+    project: default
+    source:
+      repoURL: https://github.com/abpaydart/infra-gti.git
+      targetRevision: main
+      path: kubernetes/charts/generic-chart
+      helm:
+        valueFiles:
+        - checkout/production/values.yaml
+        - secrets://checkout/production/values-enc.yaml
+        releaseName: checkout
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: frontend
+    syncPolicy: {}
+    revisionHistoryLimit: 5
+  console:
+    namespace: argocd
+    project: default
+    source:
+      repoURL: https://github.com/abpaydart/infra-gti.git
+      targetRevision: main
+      path: kubernetes/charts/generic-chart
+      helm:
+        valueFiles:
+        - console/production/values.yaml
+        - secrets://console/production/values-enc.yaml
+        releaseName: console
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: frontend
+    syncPolicy: {}
+    revisionHistoryLimit: 5
+  face-detect:
+    namespace: argocd
+    project: default
+    source:
+      repoURL: https://github.com/abpaydart/infra-gti.git
+      targetRevision: main
+      path: kubernetes/charts/generic-chart
+      helm:
+        valueFiles:
+        - face-detect/production/values.yaml
+        releaseName: face-detect
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: frontend
+    syncPolicy: {}
+    revisionHistoryLimit: 5
+  kyc:
+    namespace: argocd
+    project: default
+    source:
+      repoURL: https://github.com/abpaydart/infra-gti.git
+      targetRevision: main
+      path: kubernetes/charts/generic-chart
+      helm:
+        valueFiles:
+        - kyc/production/values.yaml
+        - secrets://kyc/production/values-enc.yaml
+        releaseName: kyc
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: frontend
+    syncPolicy: {}
+    revisionHistoryLimit: 5
+  kyc-node:
+    namespace: argocd
+    project: default
+    source:
+      repoURL: https://github.com/abpaydart/infra-gti.git
+      targetRevision: main
+      path: kubernetes/charts/generic-chart
+      helm:
+        valueFiles:
+        - kyc-node/production/values.yaml
+        - secrets://kyc-node/production/values-enc.yaml
+        releaseName: kyc-node
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: frontend
+    syncPolicy: {}
+    revisionHistoryLimit: 5
+  paydart-api:
+    namespace: argocd
+    project: default
+    source:
+      repoURL: https://github.com/abpaydart/infra-gti.git
+      targetRevision: main
+      path: kubernetes/charts/generic-chart
+      helm:
+        valueFiles:
+        - paydart-api/production/values.yaml
+        - secrets://paydart-api/production/values-enc.yaml
+        releaseName: paydart-api
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: frontend
+    syncPolicy: {}
+    revisionHistoryLimit: 5
+  dcc:
+    namespace: argocd
+    project: default
+    source:
+      repoURL: https://github.com/abpaydart/infra-gti.git
+      targetRevision: main
+      path: kubernetes/charts/generic-chart
+      helm:
+        valueFiles:
+        - dcc/production/values.yaml
+        - secrets://dcc/production/values-enc.yaml
+        releaseName: dcc
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: backend
+    syncPolicy: {}
+    revisionHistoryLimit: 5
