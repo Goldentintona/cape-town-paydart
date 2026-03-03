@@ -192,20 +192,20 @@ deployment:
         containerPort: 80
         protocol: TCP
 
-  # Liveness and Readiness  probes
-  livenessProbe:
-    httpGet:
-      scheme: HTTP
-      path: /console/health
-      port: web
-    initialDelaySeconds: 60
-    periodSeconds: 10
-  readinessProbe:
-    httpGet:
-      scheme: HTTP
-      path: /console/health
-      port: web
-    initialDelaySeconds: 30
+  # # Liveness and Readiness  probes
+  # livenessProbe:
+  #   httpGet:
+  #     scheme: HTTP
+  #     path: /console/health
+  #     port: web
+  #   initialDelaySeconds: 60
+  #   periodSeconds: 10
+  # readinessProbe:
+  #   httpGet:
+  #     scheme: HTTP
+  #     path: /console/health
+  #     port: web
+  #   initialDelaySeconds: 30
 
   # Resources to be defined for pod
   resources:
