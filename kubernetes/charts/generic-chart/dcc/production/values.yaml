@@ -18,7 +18,8 @@ deployment:
   
   # Select nodes to deploy which matches the following labels  
 
-  # nodeSelector:
+  nodeSelector:
+    backend: "true"
   #   orange: "true"
 
 

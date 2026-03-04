@@ -18,6 +18,7 @@ deployment:
   
   # Select nodes to deploy which matches the following labels  
   nodeSelector:
+    frontend: "true"
   # cloud.google.com/gke-nodepool: default-pool
 
   # If needed to setup host aliases
