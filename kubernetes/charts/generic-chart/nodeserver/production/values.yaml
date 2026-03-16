@@ -170,7 +170,7 @@ deployment:
   # Image of the app container
   image: 
     repository: pdsrvcprovider/nodeserver
-    tag: "build-979"
+    tag: "build-996"
     pullPolicy: IfNotPresent
     appprefix:
       enabled: true
