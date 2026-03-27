@@ -1,0 +1,27 @@
+grafana:
+  enabled: true
+  adminUser: gtipay
+  adminPassword: "Passyte@1"
+  service:
+    type: ClusterIP
+
+  grafana.ini:
+    server:
+      domain: monitoring.gtipayglobal.com
+      root_url: https://monitoring.gtipayglobal.com
+
+prometheus:
+  prometheusSpec:
+    retention: 30d
+
+alertmanager:
+  enabled: true
+
+kube-state-metrics:
+  enabled: true
+
+prometheus-node-exporter:
+  enabled: true
+
+defaultRules:
+  create: true
